@@ -1,4 +1,34 @@
 Rails.application.routes.draw do
+  get 'favorites/index'
+
+  get 'favorites/show'
+
+  get 'favorites/create'
+
+  get 'favorites/update'
+
+  get 'favorites/destroy'
+
+  get 'outfits/index'
+
+  get 'outfits/show'
+
+  get 'outfits/create'
+
+  get 'outfits/update'
+
+  get 'outfits/destroy'
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/create'
+
+  get 'users/update'
+
+  get 'users/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

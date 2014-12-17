@@ -29,3 +29,23 @@ $(lg_frm).on("submit", function(e){
   }
 
 });
+
+// log out our location
+var lat;
+var long;
+navigator.geolocation.getCurrentPosition(function(data){
+  console.log(data.coords);
+  $.getJSON("http://api.wunderground.com/api/ad4b2b48ae07c31f/geolookup/q/" + data.coords.latitude+ "," + data.coords.longitude+ ".json", function(data){
+    console.log(data)
+    var items =[];
+    $.each( data, function(key, val){
+      items.push( "<li id='" + data.location.city + "'>" + data.location.city + "</li>" );
+      });
+
+    $( "<ul/>", {
+     "class": "my-new-list",
+      html: items.join( "" )
+    }).appendTo( "body" );
+    });
+  });
+

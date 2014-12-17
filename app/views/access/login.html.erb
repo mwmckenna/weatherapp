@@ -1,0 +1,25 @@
+<div class="formpic">
+<%= render 'layouts/header' %>
+  <div class="signup-box">
+
+    <div class="signuplog-form">
+    <%= form_tag(login_path) do %>
+      <p class="center">
+        <%= label_tag(:username)%>
+        <%= text_field_tag(:username, params[:username], autofocus: true)%>
+      </p>
+      <p class="center">
+        <%= label_tag(:password)%>
+        <%= password_field_tag(:password)%>
+      </p>
+      <p class="center-button">
+        <%= submit_tag("Log in", class: "btn-clear") %>
+      </p>
+    <% end %>
+
+      <p class="center"><%= link_to "Don't have an account? Sign up", signup_path%>
+      <p class="center"><%= link_to "Forgot Password", forgot_path %></p>
+
+    </div>
+  </div>
+</div>

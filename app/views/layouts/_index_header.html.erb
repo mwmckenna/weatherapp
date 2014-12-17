@@ -1,0 +1,29 @@
+
+<div class="page-container-full" id="welcome-wrapper">
+  <div id="welcome-container-index">
+
+  <div>
+    <div id= "header" class="page-container bored-header clearfix shift-with-hiw">
+
+    <a href="/" class="header-logo pull-left"><img src="<%= image_path('1418778545_OneDrive-48.png') %>"></a>
+
+    <ul class="nav pull-right logged-out list-unstyled medium-right-margin">
+    <% if session[:user_id] == nil %>
+      <li id="sign_up" class="pull-left medium-right-margin">
+        <a href="/signup" class="indexpage">Sign Up</a>
+      </li>
+      <li id="login" class="pull-left">
+        <a href="/login" class="indexpage">Login</a>
+      </li>
+    <% elsif @current_user %>
+      <li id="login" class="pull-left">
+
+        <a href="/users/profile" class="indexpage">Profile</a>
+      </li>
+      <li id="login" class="pull-left">
+        <a href="/logout" class="indexpage">Logout</a>
+      </li>
+    <% end %>
+    </ul>
+    </div>
+  </div>

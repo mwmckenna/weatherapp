@@ -1,0 +1,70 @@
+
+  <%= render 'layouts/index_header' %>
+
+<div class="row forecast-box">
+
+<div class="col-md-3" id="location-form">
+<%= form_tag("/show") do %>
+  <%= label_tag(:location, "Location:") %>
+  <%= text_field_tag(:location) %>
+  <%= submit_tag("Enter") %>
+<% end %>
+<h6 id="location-check">
+<%= check_box_tag(:home_location) %>
+<%= label_tag(:home_location, "Set as home") %>
+</h6>
+</div>
+<div class="col-md-6" id="weather-box">
+</div>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-md-2">
+    <img alt="Rain Day Outfit" src='http://is4.revolveclothing.com/images/p4/n/z/JAME-WO250_V1.jpg' title="Rain Day Outfit" border="0" class="img-responsive img-center"/></a>
+  </div>
+<!--   <div class="col-md-1">
+  </div> -->
+  <div class="col-md-2">
+    <img alt="Rain Day Outfit" src='http://is4.revolveclothing.com/images/p4/n/z/ONET-WO24_V1.jpg' title="Rain Day Outfit" border="0"class="img-responsive img-center" /></a>
+  </div>
+<!--   <div class="col-md-1">
+  </div> -->
+  <div class="col-md-2">
+    <img alt="Rain Day Outfit" src='http://is4.revolveclothing.com/images/p4/n/z/BARD-WO20_V1.jpg' title="Rain Day Outfit" border="0" class="img-responsive img-center" /></a>
+  </div>
+<!--   <div class="col-md-1">
+  </div> -->
+  <div class="col-md-2">
+    <img alt="Rain Day Outfit" src='http://is4.revolveclothing.com/images/p4/n/z/NHOX-WO10_V1.jpg' title="Rain Day Outfit" border="0" class="img-responsive img-center"/></a>
+  </div>
+<!--     <div class="col-md-1">
+  </div> -->
+  <div class="col-md-2">
+    <img alt="Rain Day Outfit" src='http://is4.revolveclothing.com/images/p4/n/z/MSCO-WO42_V1.jpg' title="Rain Day Outfit" border="0" class="img-responsive img-center" /></a>
+  </div>
+</div>
+<div class="row">
+</div>
+<br>
+<br>
+
+</div>
+</div>
+
+<script>
+$(document).ready(function() {
+  $.ajax({
+  url : "http://api.wunderground.com/api/ad4b2b48ae07c31f/geolookup/conditions/q/CA/San_Francisco.json",
+  dataType : "jsonp",
+  success : function(parsed_json) {
+  var location = parsed_json['location']['city'];
+  var temp_f = parsed_json['current_observation']['temp_f'];
+  console.log("Current temperature in " + location + " is: " + temp_f);
+  }
+  });
+});
+</script>
+
+

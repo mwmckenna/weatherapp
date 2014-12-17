@@ -1,33 +1,46 @@
 Rails.application.routes.draw do
-  get 'favorites/index'
 
-  get 'favorites/show'
+  root 'home#index'
+  get 'home/index', as: 'home'
 
-  get 'favorites/create'
+  get 'users/profile', to: 'users#profile', as: 'profile'
 
-  get 'favorites/update'
+  post 'users/profile', to: 'users#create_outfit'
 
-  get 'favorites/destroy'
+  get 'outfits/new'
 
   get 'outfits/index'
 
-  get 'outfits/show'
+  post 'outfits/favorite', to: 'outfits#favorite', as: 'favorite_outfit'
 
-  get 'outfits/create'
+  get 'access/forgot_password'
 
-  get 'outfits/update'
+  get 'login', to: "access#login", as: 'login'
 
-  get 'outfits/destroy'
+  get 'signup', to: "access#signup", as: 'signup'
 
-  get 'users/index'
+  post 'login', to: "access#attempt_login"
 
-  get 'users/show'
+  post 'signup', to: "access#create"
 
-  get 'users/create'
+  get 'home', to: "access#home"
 
-  get 'users/update'
+  get 'logout', to: "access#logout"
 
-  get 'users/destroy'
+  get 'forgot', to: 'access#forgot_password'
+  post 'send_reset', to: 'access#send_reset'
+  get 'reset/:token', to: 'access#reset_password'
+  post 'update_password', to: 'access#update_password'
+
+  get 'location', to: "users#location", as: 'location'
+
+  resources :users do
+    resources :outfits
+    # resources :profile
+  end
+
+  resources :outfits
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

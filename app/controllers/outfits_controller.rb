@@ -1,11 +1,16 @@
 class OutfitsController < ApplicationController
-  def index
-    if params["temp_min"].to_i == 0
-      flash["failure"]= "Please input a time greater than zero."
-      redirect_to home_path
+    def new
+    if session[:user_id]
+      @current_user = User.find session[:user_id]
+      @new_outfit = @current_user.outfits.new
+    else
+      redirect_to '/login'
     end
-    @outfit_list = Oufit.temp_constraints
-    if @activity_list.length == 0
+  end
+
+  def index
+    @outfit_list = Outfit.temp_constraints
+    if @outfit_list.length == 0
       flash["failure"] = "No results were returned."
       redirect_to home_path
     end
@@ -19,7 +24,7 @@ class OutfitsController < ApplicationController
   def create
     if session[:user_id]
       @current_user = User.find session[:user_id]
-      @current_user.activities.create(activity_params)
+      @current_user.outifts.create(outfit_params)
       redirect_to home_path
     else
       redirect_to '/login'

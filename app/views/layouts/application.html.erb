@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html>
-<html ngApp = "myApp">
-  <title>Weatherapp</title>
+  <title>Weather app</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
+<body ng-app="WeatherApp">
+
+
+  <link href='https://fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:300,700' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:300' rel='stylesheet' type='text/css'>
+
+  <script>UPLOADCARE_PUBLIC_KEY = "demopublickey";</script>
+
+
+</head>
 <body>
+
+
+
+<% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, class: name + " flash" %>
+    <% end %>
+
 
 <%= yield %>
 

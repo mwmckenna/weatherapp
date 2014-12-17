@@ -1,5 +1,5 @@
 class OutfitsController < ApplicationController
-    def new
+  def new
     if session[:user_id]
       @current_user = User.find session[:user_id]
       @new_outfit = @current_user.outfits.new
@@ -9,11 +9,16 @@ class OutfitsController < ApplicationController
   end
 
   def index
-    @outfit_list = Outfit.temp_constraints
-    if @outfit_list.length == 0
-      flash["failure"] = "No results were returned."
-      redirect_to home_path
+    @current_temp = params[:temp]
+    @outfit_list = Outfit.temp_constraints(@current_temp)
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @outfit_list }
     end
+    # if @outfit_list.length == 0
+    #   flash["failure"] = "No results were returned."
+    #   redirect_to home_path
+    # end
   end
 
   def show

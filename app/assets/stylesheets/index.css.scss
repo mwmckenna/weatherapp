@@ -66,13 +66,31 @@
     text-decoration:none !important;
 }
 .forecast-box {
-    height: 250px;
-    background-color: rgba(0,0,0,.2);
-    padding: 15px;
+    width: 100%;
+    background-color: rgba(0,0,10,.05);
+    padding: 0px 15px;
 }
 #location-form {
-    height: 200px;
-    width: 400px;
+    margin: 20px;
     font-family: 'Quicksand', sans-serif !important;
 }
-
+#weather-box {
+    font-family: 'Quicksand', sans-serif;
+}
+#geolocation{
+    margin: 10px;
+    font-size: 26px;
+}
+#weather-icon {
+    float: left;
+}
+#weather-icon-url {
+    height: 70px;
+    right: 500px;
+}
+#weather-group{
+    float: left;
+}
+#the-weather {
+    float: right;
+}

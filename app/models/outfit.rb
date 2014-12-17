@@ -16,6 +16,6 @@ class Outfit < ActiveRecord::Base
   private
 
   def self.fun_outfits temp
-     where("temp_min <= ").where("temp_max IS NULL OR time_max >= ")
+     where("temp_min <= ").where("time_max >= ")
   end
 end

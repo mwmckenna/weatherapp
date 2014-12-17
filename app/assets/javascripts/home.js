@@ -35,17 +35,25 @@ var lat;
 var long;
 navigator.geolocation.getCurrentPosition(function(data){
   console.log(data.coords);
-  $.getJSON("http://api.wunderground.com/api/ad4b2b48ae07c31f/geolookup/q/" + data.coords.latitude+ "," + data.coords.longitude+ ".json", function(data){
-    console.log(data)
-    var items =[];
-    $.each( data, function(key, val){
-      items.push( "<li id='" + data.location.city + "'>" + data.location.city + "</li>" );
-      });
+  $.getJSON("http://api.wunderground.com/api/ad4b2b48ae07c31f/geolookup/conditions/q/" + data.coords.latitude+ "," + data.coords.longitude+ ".json", function(data){
+    console.log(data);
+    var items = [];
+      items.push( "<div id= geolocation >" + "Today in " + data.location.city + ", ");
+      items.push( data.location.state + ": " + "</div>" );
+      items.push( "<div class= col-md-2 id= weather-icon>" + "<img id=weather-icon-url src=" + data.current_observation.icon_url + ">");
+      items.push( "<p id= weather-decrip>" + data.current_observation.weather + "</p> </div>");
+      items.push( "<div class- col-md-4 id=weather-group><div id= the-weather> <p id= current-temp>" + data.current_observation.temp_f + "</p>");
+      items.push( "<p id= feels-like >" + "Feels like " + data.current_observation.feelslike_f + "</p>");
+      items.push( "<p id= precip >" + "Expected Precipitation: " + data.current_observation.precip_today_in + " inches </p> </div></div>");
 
     $( "<ul/>", {
-     "class": "my-new-list",
+     "class": "user-weather",
       html: items.join( "" )
-    }).appendTo( "body" );
+    }).appendTo( "#weather-box" );
+
+    $.getJSON("/outfits?temp=" + data.current_observation.temp_f + ".json", function(dresses){
+      console.log(dresses);
     });
-  });
+    });
+ });
 

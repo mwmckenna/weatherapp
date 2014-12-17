@@ -2,20 +2,18 @@
   <%= render 'layouts/index_header' %>
 
 <div class="row forecast-box">
-
-<div class="col-md-3" id="location-form">
-<%= form_tag("/show") do %>
-  <%= label_tag(:location, "Location:") %>
-  <%= text_field_tag(:location) %>
-  <%= submit_tag("Enter") %>
-<% end %>
-<h6 id="location-check">
-<%= check_box_tag(:home_location) %>
-<%= label_tag(:home_location, "Set as home") %>
-</h6>
-</div>
-<div class="col-md-6" id="weather-box">
-</div>
+  <div class="row" id="weather-box">
+  </div>
+  <br>
+  <div class="row" id="location-form">
+    <h5>
+    <%= form_tag("/show") do %>
+      <%= label_tag(:location, "Search Location:") %>
+      <%= text_field_tag(:location) %>
+      <%= submit_tag("Enter") %>
+    <% end %>
+    </h5>
+  </div>
 </div>
 
 <br>

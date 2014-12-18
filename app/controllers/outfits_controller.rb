@@ -21,9 +21,14 @@ class OutfitsController < ApplicationController
     # end
   end
 
+  def filter
+    outfits = Outfit.all
+    render json: outfits
+  end
+
   def show
     @outfit = Outfit.find params[:id]
-    @filtered_outfits_by_temp = Outfit.find([5,6])
+    @filtered_outfits_by_temp = Outfit.find([4,5])
   end
 
   def create

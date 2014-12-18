@@ -50,10 +50,17 @@ navigator.geolocation.getCurrentPosition(function(data){
      "class": "user-weather",
       html: items.join( "" )
     }).appendTo( "#weather-box" );
+    console.log(data.current_observation.temp_f);
+    $.get('/filter').done(function(wea){
+      wea.forEach(function(w){
+        if(w.temp_max > data.current_observation.temp_f && w.temp_min < data.current_observation.temp_f)
+          console.log(w);
+          appendTo("")
 
-    $.getJSON("/outfits?temp=" + data.current_observation.temp_f + ".json", function(dresses){
-      console.log(dresses);
+
+      });
     });
+
     });
  });
 

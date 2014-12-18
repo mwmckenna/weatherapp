@@ -34,6 +34,8 @@ Rails.application.routes.draw do
 
   get 'location', to: "users#location", as: 'location'
 
+  get 'filter', to: 'outfits#filter'
+
   resources :users do
     resources :outfits
     # resources :profile

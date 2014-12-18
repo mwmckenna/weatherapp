@@ -6,13 +6,11 @@
   </div>
   <br>
   <div class="row" id="location-form">
-    <h5>
     <%= form_tag("/show") do %>
       <%= label_tag(:location, "Search Location:") %>
       <%= text_field_tag(:location) %>
-      <%= submit_tag("Enter") %>
+      <%= submit_tag ("Enter") %>
     <% end %>
-    </h5>
   </div>
 </div>
 <h5 id='user-rec'> Lindsey Recommends </h5>
@@ -34,7 +32,7 @@
 </div>
 </div>
 
-<script>
+<!-- <script>
 $(document).ready(function() {
   $.ajax({
   url : "http://api.wunderground.com/api/ad4b2b48ae07c31f/geolookup/conditions/q/CA/San_Francisco.json",
@@ -46,6 +44,6 @@ $(document).ready(function() {
   }
   });
 });
-</script>
+</script> -->
 
 

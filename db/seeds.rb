@@ -132,7 +132,28 @@ Outfit.create(
     clothes_url: 'http://www.revolveclothing.com/becbridge-drifter-skirt-in-fire/dp/BECA-WQ25/',
     img_url: 'http://is4.revolveclothing.com/images/p4/n/z/BECA-WQ25_V4.jpg'
   )
-
+Outfit.create(
+    title: "Gray Sweater with Jeans",
+    description: "Gray Sweater with Jeans",
+    temp_min: 58,
+    temp_max: 68,
+    tag: 'classic',
+    # precipitation: 'rain',
+    # price: 50,
+    clothes_url: 'http://www.revolveclothing.com/john-jenn-by-line-manon-oversized-cardigan-in-light-smoke/dp/JNAX-WK67/',
+    img_url: 'http://is4.revolveclothing.com/images/p4/n/z/JNAX-WK67_V1.jpg'
+  )
+Outfit.create(
+    title: "Long White Sweater with Jeans",
+    description: "Long White Sweater with Jeans",
+    temp_min: 58,
+    temp_max: 68,
+    tag: 'classic',
+    # precipitation: 'rain',
+    # price: 50,
+    clothes_url: 'http://www.revolveclothing.com/vintageous-naomi-long-cardigan-in-milk/dp/VTAX-WK64/',
+    img_url: 'http://is4.revolveclothing.com/images/p4/n/z/VTAX-WK64_V1.jpg'
+  )
 
 
 

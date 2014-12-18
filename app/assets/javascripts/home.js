@@ -42,9 +42,9 @@ navigator.geolocation.getCurrentPosition(function(data){
       items.push( data.location.state + ": " + "</div>" );
       items.push( "<div class= col-md-2 id= weather-icon>" + "<img id=weather-icon-url src=" + data.current_observation.icon_url + ">");
       items.push( "<p id= weather-decrip>" + data.current_observation.weather + "</p> </div>");
-      items.push( "<div class- col-md-4 id=weather-group><div id= the-weather> <p id= current-temp>" + "Temperature is: " + data.current_observation.temp_f + "</p>");
-      items.push( "<p id= feels-like >" + "Feels like: " + data.current_observation.feelslike_f + "</p>");
-      items.push( "<p id= precip >" + "Expected Precipitation: " + data.current_observation.precip_today_in + " inches </p> </div></div>");
+      items.push( "<div class- col-md-4 id=weather-group><div id= the-weather> <p id= current-temp>" + "Temperature is <strong>" + data.current_observation.temp_f + "</strong></p>");
+      items.push( "<p id= feels-like >" + "Feels like <strong> " + data.current_observation.feelslike_f + "</strong></p>");
+      items.push( "<p id= precip >" + "Expected Precipitation: <strong> " + data.current_observation.precip_today_in + " inches</strong> </p> </div></div>");
 
     $( "<ul/>", {
      "class": "user-weather",

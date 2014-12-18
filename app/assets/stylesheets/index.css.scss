@@ -35,7 +35,7 @@
     width: 100%;
     position: relative;
     color: black;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Raleway', sans-serif;
     /*display:inline-block;*/
 }
 
@@ -69,13 +69,22 @@
     width: 100%;
     background-color: rgba(0,0,10,.05);
     padding: 0px 15px;
+    -webkit-animation: forecastmove 4s linear;
+}
+@-webkit-keyframes forecastmove {
+    0% {height: 0px;}
+    50% {height: 150px;}
+    100% {height: 250px;}
 }
 #location-form {
     margin: 20px;
-    font-family: 'Quicksand', sans-serif !important;
+    font-family: 'Muli', sans-serif !important;
+    -webkit-animation: formmove 4s linear;
+    -webkit-transition: width 2s; /* Safari 3.1 to 6.0 */
+    transition: width 2s;
 }
 #weather-box {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Muli', sans-serif;
 }
 #geolocation{
     margin: 10px;
@@ -91,11 +100,14 @@
 #weather-group{
     float: left;
 }
+.user-weather {
+    font-size: 20px;
+}
 #the-weather {
     float: right;
 }
 #user-rec {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Muli', sans-serif;
     font-size: 18px;
     padding: 20px;
 }

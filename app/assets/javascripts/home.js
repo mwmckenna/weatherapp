@@ -55,7 +55,7 @@ navigator.geolocation.getCurrentPosition(function(data){
       wea.forEach(function(w){
         if(w.temp_max > data.current_observation.temp_f && w.temp_min < data.current_observation.temp_f)
           console.log(w);
-          appendTo("")
+          $("#outfit-finder").append("<div class=col-md-2> <img class=img-responsive img-center src='"+ w.img_url + "'>");
 
 
       });

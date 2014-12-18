@@ -13,7 +13,7 @@ Outfit.create(
     tag: 'classic',
     # precipitation: 'rain',
     # price: 50,
-    # purchase_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
+    api_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
     img_url: 'http://is4.revolveclothing.com/images/p4/n/z/JAME-WO250_V1.jpg'
   )
 
@@ -25,7 +25,7 @@ Outfit.create(
     tag: 'classic',
     # precipitation: 'rain',
     # price: 50,
-    # purchase_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
+    api_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
     img_url: 'http://is4.revolveclothing.com/images/p4/n/z/ONET-WO24_V1.jpg'
   )
 
@@ -37,7 +37,7 @@ Outfit.create(
     tag: 'classic',
     # precipitation: 'rain',
     # price: 50,
-    # purchase_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
+    api_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
     img_url: 'http://is4.revolveclothing.com/images/p4/n/z/BARD-WO20_V1.jpg'
   )
 
@@ -49,7 +49,7 @@ Outfit.create(
     tag: 'classic',
     # precipitation: 'rain',
     # price: 50,
-    # purchase_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
+    api_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
     img_url: 'http://is4.revolveclothing.com/images/p4/n/z/NHOX-WO10_V1.jpg'
   )
 
@@ -61,6 +61,6 @@ Outfit.create(
     tag: 'classic',
     # precipitation: 'rain',
     # price: 50,
-    # purchase_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
+    api_url: 'http://www.revolveclothing.com/r/hotlist.jsp?navsrc=main',
     img_url: 'http://is4.revolveclothing.com/images/p4/n/z/MSCO-WO42_V1.jpg'
   )

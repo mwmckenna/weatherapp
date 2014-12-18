@@ -34,7 +34,7 @@ gem 'bootstrap-sass'
 gem 'angular-gem'
 # Use unicorn as the app server
 # gem 'unicorn'
-
+gem 'gon'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 

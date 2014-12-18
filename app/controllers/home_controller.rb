@@ -2,6 +2,7 @@ class HomeController < ApplicationController
   def index
     if session[:user_id]
       @current_user = User.find session[:user_id]
+      gon.current_user = @current_user
     end
   end
 

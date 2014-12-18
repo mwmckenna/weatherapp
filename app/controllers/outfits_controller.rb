@@ -1,4 +1,4 @@
-class OutfitsController < ApplicationController
+fi OutfitsController < ApplicationController
   def new
     if session[:user_id]
       @current_user = User.find session[:user_id]
@@ -15,10 +15,6 @@ class OutfitsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @outfit_list }
     end
-    # if @outfit_list.length == 0
-    #   flash["failure"] = "No results were returned."
-    #   redirect_to home_path
-    # end
   end
 
   def filter

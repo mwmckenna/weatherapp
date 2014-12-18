@@ -53,14 +53,14 @@ navigator.geolocation.getCurrentPosition(function(data){
     console.log(data.current_observation.temp_f);
     $.get('/filter').done(function(wea){
       wea.forEach(function(w){
-        if(w.temp_max > data.current_observation.temp_f && w.temp_min < data.current_observation.temp_f)
+        if(w.temp_max > data.current_observation.temp_f && w.temp_min < data.current_observation.temp_f) {
           console.log(w);
           $("#outfit-finder").append("<div class=col-md-3> <img class=img-responsive img-center src='"+ w.img_url + "'>");
           if(gon.current_user){
             console.log("you iz logged in!");
-            $("#outfit-finder").append("<div class=col-sm-1 id=buttons><a href='" + w.api_url + "'><img src='http://i.imgur.com/P4PysNN.png' id='shopping-icon'>"+"</a></div></div>");
+            $("#outfit-finder").append("<div class=col-sm-1><a href='" + w.clothes_url + "'><img src='http://i.imgur.com/P4PysNN.png' class='shopping-icon'></a><p><a href='outfits/favorites'><img src='https://cdn1.iconfinder.com/data/icons/metroicons/black/heart.png' class='heart-icon'></a></p><p><a href='outfits/favorites'><img src='https://cdn1.iconfinder.com/data/icons/metroicons/black/cancel.png' class='hateit-icon'></a></p></div></div>");
           }
-
+        }
       });
     });
 
